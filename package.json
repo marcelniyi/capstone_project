@@ -10,7 +10,7 @@
     "dev": "nodemon --exec babel-node server/server.js",
     "test": "jest --coverage --forceExit --runInBand --detectOpenHandles ",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "start": "node server/server.js",
+    "start": "babel-node server/server.js",
     "start:dev": "nodemon --exec babel-node index.js"
 
   },
