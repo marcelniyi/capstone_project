@@ -88,3 +88,14 @@ export const updateProfile = async (req, res) => {
           throw new Error(err);
         }
 }
+
+export const listUsers = async (req, res) => {
+        try {
+          const users = await Users.find({});
+          res.status(201).json({
+            users: users
+          });
+        }catch(err) {
+          throw new Error(err);
+        }
+}
