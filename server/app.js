@@ -17,6 +17,9 @@ db.once('open', () => {
 
 app.use(errors())
 app.use(express.json());
+app.get('/', (req, res) => {
+  res.send({ message: 'Welcome to Marcel Capstone project API' });
+});
 app.use('/', TodoRoute);
 
 
