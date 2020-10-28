@@ -14,9 +14,7 @@ from '../controllers/articles';
 
 const TodoRoute = Router();
 
-TodoRoute.get('/', (req, res) => {
-  res.send({ message: 'Welcome to Marcel Capstone project API' });
-});
+
 TodoRoute.post('/api/v1/usersRegister', userRegister)
 TodoRoute.post('/api/v1/userLogin', userLogin)
 TodoRoute.get('/api/v1/listUsers', checkToken, listUsers)
