@@ -2,7 +2,6 @@ import app from "../app"; // Link to your server file
 import supertest from "supertest";
 const request = supertest(app);
 import mongoose from 'mongoose';
-import jwt from "jsonwebtoken";
 
 import {config} from '../../config';
 
@@ -11,14 +10,13 @@ import Articles from '../models/articles';
 import { generateToken } from '../helpers/auth'
 
 
+const token = generateToken({
+    email: 'max@gmail.com',
+    isadmin: 'false',
+    id: '5f9654d321d4d92b1ec743d9',
+})
 
 
-const token = jwt.sign(
-   { email: 'max@gmail.com',
-   isadmin: 'false',
-   id: '5f9654d321d4d92b1ec743d9', },
-   'marcel'
- );
 
 describe('All about blog POST', () => {
   afterAll(async() => {

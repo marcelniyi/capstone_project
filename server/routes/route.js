@@ -2,7 +2,7 @@ import {Router} from 'express';
 import { checkToken } from '../helpers/auth';
 
 
-import {userRegister, userLogin} from '../controllers/users';
+import {userRegister, userLogin, listUsers} from '../controllers/users';
 import { addQueries, listQueries } from '../controllers/queries';
 import { addBlog, listBlog,
    singleBlog,
@@ -19,6 +19,8 @@ TodoRoute.get('/api/v1', (req, res) => {
 });
 TodoRoute.post('/api/v1/usersRegister', userRegister)
 TodoRoute.post('/api/v1/userLogin', userLogin)
+TodoRoute.get('/api/v1/listUsers', checkToken, listUsers)
+
 TodoRoute.post('/api/v1/blog', checkToken, addBlog)
 TodoRoute.get('/api/v1/blogs', listBlog)
 TodoRoute.get('/api/v1/blogs/:id', singleBlog)
