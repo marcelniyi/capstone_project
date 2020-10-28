@@ -7,9 +7,13 @@
     "testEnvironment": "node"
   },
   "scripts": {
-    "start": "nodemon --exec babel-node server/server.js",
+    "dev": "nodemon --exec babel-node server/server.js",
     "test": "jest --coverage --forceExit --runInBand --detectOpenHandles ",
-    "coveralls": "cat ./coverage/lcov.info | coveralls"
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "build": ".\\node_modules\\.bin\\babel src --out-dir dist",
+    "start": "babel-node -- server/server.js",
+    "start:dev": "nodemon --exec babel-node index.js"
+
   },
   "author": "NIYITEGEKA Marcel",
   "license": "ISC",
